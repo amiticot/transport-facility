@@ -12,15 +12,19 @@ export class RideListComponent {
   vehicleType: string = '';
   filterTime: string = '';
 
+  minDateTime: any;
+
   constructor(private rideService: RideService) {
     this.loadRides();
   }
-
 
   ngOnInit() {
     this.rideService.getRides().subscribe((rides: any) => {
       this.rides = rides;
     });
+
+    const now = new Date();
+    this.minDateTime = this.rideService.formatDateToDatetimeLocal(now);
   }
 
   loadRides() {

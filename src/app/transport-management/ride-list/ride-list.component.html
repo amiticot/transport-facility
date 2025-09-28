@@ -7,7 +7,8 @@
         <option value="Car">Car</option>
         <option value="Bike">Bike</option>
     </select>
-
+    <label>Filter by Time</label>
+    <input type="datetime-local" [min]="minDateTime" [(ngModel)]="filterTime" (change)="onFilterChange()" />
 </div>
 
 <ul>
@@ -16,8 +17,8 @@
         <br />
         {{ ride.pickupPoint }} → {{ ride.destination }}
         <br />
-        <!-- Time: {{ ride.time | date:'short' }}
-        <br /> -->
+        Time: {{ ride.time | date:'short' }}
+        <br />
         <app-book-ride [rideId]="ride.rideId"></app-book-ride>
     </li>
 </ul>

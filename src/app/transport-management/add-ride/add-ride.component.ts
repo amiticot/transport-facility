@@ -11,24 +11,12 @@ export class AddRideComponent {
 
   minDateTime: any;
 
+  constructor(private fb: FormBuilder, private rideService: RideService) { }
+
   ngOnInit() {
     const now = new Date();
-    this.minDateTime = this.formatDateToDatetimeLocal(now);
+    this.minDateTime = this.rideService.formatDateToDatetimeLocal(now);
   }
-
-  formatDateToDatetimeLocal(date: Date): string {
-    const pad = (n: number) => n.toString().padStart(2, '0');
-
-    const year = date.getFullYear();
-    const month = pad(date.getMonth() + 1); // Months are 0-based
-    const day = pad(date.getDate());
-    const hours = pad(date.getHours());
-    const minutes = pad(date.getMinutes());
-
-    return `${year}-${month}-${day}T${hours}:${minutes}`;
-  }
-
-  constructor(private fb: FormBuilder, private rideService: RideService) { }
 
   rideForm = this.fb.group({
     employeeId: ['', Validators.required],
