@@ -22,6 +22,6 @@
 
     input.ng-invalid.ng-touched,
     select.ng-invalid.ng-touched {
-        border: 1px solid red;
+        border: 2px solid red;
     }
 }
