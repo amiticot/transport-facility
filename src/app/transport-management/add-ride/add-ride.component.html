@@ -26,5 +26,5 @@
   <label>Destination</label>
   <input formControlName="destination" />
 
-  <button type="submit">Add Ride</button>
+  <button type="submit" [disabled]="rideForm.invalid">Add Ride</button>
 </form>
