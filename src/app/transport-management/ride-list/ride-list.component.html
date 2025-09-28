@@ -17,7 +17,7 @@
         <br />
         {{ ride.pickupPoint }} → {{ ride.destination }}
         <br />
-        Time: {{ ride.time | date:'short' }}
+        Time: {{ ride.time | date: 'dd/MM/yyyy' }}
         <br />
         <app-book-ride [rideId]="ride.rideId"></app-book-ride>
     </li>
