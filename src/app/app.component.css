@@ -1,0 +1,21 @@
+/* Main container */
+.main {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+/* Left and right sections */
+.left,
+.right {
+    flex: 1;
+    box-sizing: border-box;
+}
+
+/* Optional: Add some styling to the child components */
+.left,
+.right {
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}

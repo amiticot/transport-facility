@@ -1,1 +1,23 @@
-<p>ride-list works!</p>
+<h3>Available Rides</h3>
+
+<div>
+    <label>Filter by Vehicle</label>
+    <select [(ngModel)]="vehicleType" (change)="onFilterChange()">
+        <option value="">All</option>
+        <option value="Car">Car</option>
+        <option value="Bike">Bike</option>
+    </select>
+
+</div>
+
+<ul>
+    <li class="list" *ngFor="let ride of rides">
+        {{ ride.vehicleType }} | {{ ride.vehicleNo }} | Seats: {{ ride.vacantSeats }}
+        <br />
+        {{ ride.pickupPoint }} → {{ ride.destination }}
+        <br />
+        <!-- Time: {{ ride.time | date:'short' }}
+        <br /> -->
+        <app-book-ride [rideId]="ride.rideId"></app-book-ride>
+    </li>
+</ul>

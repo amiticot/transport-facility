@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { AddRideComponent } from './transport-management/add-ride/add-ride.component';
 import { RideListComponent } from './transport-management/ride-list/ride-list.component';
 import { BookRideComponent } from './transport-management/book-ride/book-ride.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,9 @@ import { BookRideComponent } from './transport-management/book-ride/book-ride.co
     BookRideComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

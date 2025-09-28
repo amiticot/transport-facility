@@ -1,1 +1,30 @@
-<p>add-ride works!</p>
+<h3>Add Ride</h3>
+<form class="form-control" [formGroup]="rideForm" (ngSubmit)="onSubmit()">
+  <label>Employee ID</label>
+  <input formControlName="employeeId" />
+
+  <label>Vehicle Type</label>
+  <select formControlName="vehicleType">
+    <option value="Car">Car</option>
+    <option value="Bike">Bike</option>
+  </select>
+
+  <div>
+    <label>Vehicle No</label>
+    <input formControlName="vehicleNo" />
+  </div>
+
+  <label>Vacant Seats</label>
+  <input type="number" formControlName="vacantSeats" min="1" max="1000" />
+
+  <label>Time</label>
+  <input type="datetime-local" formControlName="time" />
+
+  <label>Pickup Point</label>
+  <input formControlName="pickupPoint" />
+
+  <label>Destination</label>
+  <input formControlName="destination" />
+
+  <button type="submit">Add Ride</button>
+</form>
