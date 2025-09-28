@@ -13,6 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "baseHref": "/transport-facility/",
             "outputPath": "dist/transport-facility",
             "index": "src/index.html",
             "main": "src/main.ts",
